@@ -21,15 +21,17 @@ namespace Lift.Entities
         public void MoveToTop() {
             if (this.People.Count > 0)
             {
-                while (this.CurrentFloor < this.TopFloor)
+                while (this.CurrentFloor <= this.TopFloor)
                 {
                     this.CurrentFloor++;
                     List<Person> Newpeople = new List<Person>();
+                    bool peopleReached = false;
                     this.People.ForEach(p =>
                     {
                         p.CurrentFloor = this.CurrentFloor;
                         if (p.DestinationFloor == this.CurrentFloor)
                         {
+                            peopleReached = true;
                             Console.WriteLine($"{p.DestinationFloor} Reached");
                             p.WaitingStatus = WaitingStatus.Reached;
                         }
@@ -38,6 +40,9 @@ namespace Lift.Entities
                             Newpeople.Add(p);
                         }
                     });
+                    if (peopleReached) {
+                        Console.WriteLine($"Stopped On:{this.CurrentFloor}");
+                    }
                     this.People = Newpeople;
                 }
             }
@@ -55,11 +60,13 @@ namespace Lift.Entities
                 {
                     this.CurrentFloor--;
                     List<Person> Newpeople = new List<Person>();
+                    bool peopleReached = false;
                     this.People.ForEach(p =>
                     {
                         p.CurrentFloor = this.CurrentFloor;
                         if (p.DestinationFloor == this.CurrentFloor)
                         {
+                            peopleReached = true;
                             Console.WriteLine($"{p.DestinationFloor} Reached");
                             p.WaitingStatus = WaitingStatus.Reached;
                         }
@@ -68,6 +75,9 @@ namespace Lift.Entities
                             Newpeople.Add(p);
                         }
                     });
+                    if (peopleReached) {
+                        Console.WriteLine($"Stopped On:{this.CurrentFloor}");
+                    }
                     this.People = Newpeople;
                 }
             }
