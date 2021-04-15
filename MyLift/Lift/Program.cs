@@ -14,11 +14,11 @@ namespace Lift
             {
             new int[0], // G
             new int[0], // 1
-            new int[]{4,3,5,6}, // 2
+            new int[]{3,5,1,6}, // 2
             new int[0], // 3
             new int[]{5}, // 4
             new int[]{6}, // 5
-            new int[]{1,4,2 }, // 6
+            new int[]{4,2 }, // 6
             };
             Building myBuilding = new Building(5, queues);
             myBuilding.Go();

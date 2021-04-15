@@ -31,7 +31,7 @@ namespace Lift.Entities
                     {
                         p.PressButton();
                     }
-                }); 
+                });
             }
             this.Lift.MoveToTop();
             this.Lift.MoveToGround();

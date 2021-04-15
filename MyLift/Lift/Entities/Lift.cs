@@ -1,6 +1,7 @@
 ﻿using Lift.Enums;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Lift.Entities
@@ -21,7 +22,11 @@ namespace Lift.Entities
         public void MoveToTop() {
             if (this.People.Count > 0)
             {
-                while (this.CurrentFloor <= this.TopFloor)
+                int maxFloorButtonPressed = this.People.Select(p => {
+                    return p.DestinationFloor;
+                }).ToArray().Max();
+                //Console.WriteLine(maxFloorButtonPressed);
+                while (this.CurrentFloor <= maxFloorButtonPressed || this.CurrentFloor <= this.TopFloor)
                 {
                     this.CurrentFloor++;
                     List<Person> Newpeople = new List<Person>();
@@ -86,11 +91,13 @@ namespace Lift.Entities
             while (floorToGo > this.CurrentFloor && this.CurrentFloor <= this.TopFloor) {
                 this.CurrentFloor++;
                 List<Person> Newpeople = new List<Person>();
+                bool peopleReached = false;
                 this.People.ForEach(p =>
                 {
                     p.CurrentFloor = this.CurrentFloor;
                     if (p.DestinationFloor == this.CurrentFloor)
                     {
+                        peopleReached = true;
                         Console.WriteLine($"{p.DestinationFloor} Reached");
                         p.WaitingStatus = WaitingStatus.Reached;
                     }
@@ -98,6 +105,11 @@ namespace Lift.Entities
                         Newpeople.Add(p);
                     }
                 });
+                if (peopleReached)
+                {
+                    Console.WriteLine($"Stopped On:{this.CurrentFloor}");
+                }
+                this.People = Newpeople;
                 this.People = Newpeople;
             }
         }
@@ -106,11 +118,13 @@ namespace Lift.Entities
             {
                 this.CurrentFloor--;
                 List<Person> Newpeople = new List<Person>();
+                bool peopleReached = false;
                 this.People.ForEach(p =>
                 {
                     p.CurrentFloor = this.CurrentFloor;
                     if (p.DestinationFloor == this.CurrentFloor)
                     {
+                        peopleReached = true;
                         Console.WriteLine($"{p.DestinationFloor} Reached");
                         p.WaitingStatus = WaitingStatus.Reached;
                     }
@@ -119,6 +133,11 @@ namespace Lift.Entities
                         Newpeople.Add(p);
                     }
                 });
+                if (peopleReached)
+                {
+                    Console.WriteLine($"Stopped On:{this.CurrentFloor}");
+                }
+                this.People = Newpeople;
                 this.People = Newpeople;
             }
         }
