@@ -1,0 +1,13 @@
+C:\C# Lift\The-Lift-Kata\Lift\Lift\bin\Debug\netcoreapp3.1\Lift.exe
+C:\C# Lift\The-Lift-Kata\Lift\Lift\bin\Debug\netcoreapp3.1\Lift.deps.json
+C:\C# Lift\The-Lift-Kata\Lift\Lift\bin\Debug\netcoreapp3.1\Lift.runtimeconfig.json
+C:\C# Lift\The-Lift-Kata\Lift\Lift\bin\Debug\netcoreapp3.1\Lift.runtimeconfig.dev.json
+C:\C# Lift\The-Lift-Kata\Lift\Lift\bin\Debug\netcoreapp3.1\Lift.dll
+C:\C# Lift\The-Lift-Kata\Lift\Lift\bin\Debug\netcoreapp3.1\Lift.pdb
+C:\C# Lift\The-Lift-Kata\Lift\Lift\obj\Debug\netcoreapp3.1\Lift.csprojAssemblyReference.cache
+C:\C# Lift\The-Lift-Kata\Lift\Lift\obj\Debug\netcoreapp3.1\Lift.AssemblyInfoInputs.cache
+C:\C# Lift\The-Lift-Kata\Lift\Lift\obj\Debug\netcoreapp3.1\Lift.AssemblyInfo.cs
+C:\C# Lift\The-Lift-Kata\Lift\Lift\obj\Debug\netcoreapp3.1\Lift.csproj.CoreCompileInputs.cache
+C:\C# Lift\The-Lift-Kata\Lift\Lift\obj\Debug\netcoreapp3.1\Lift.dll
+C:\C# Lift\The-Lift-Kata\Lift\Lift\obj\Debug\netcoreapp3.1\Lift.pdb
+C:\C# Lift\The-Lift-Kata\Lift\Lift\obj\Debug\netcoreapp3.1\Lift.genruntimeconfig.cache
